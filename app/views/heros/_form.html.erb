@@ -1,0 +1,42 @@
+<%= form_with(model: hero, local: true) do |form| %>
+  <% if hero.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(hero.errors.count, "error") %> prohibited this hero from being saved:</h2>
+
+      <ul>
+      <% hero.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :real_name %>
+    <%= form.text_field :real_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :health %>
+    <%= form.number_field :health %>
+  </div>
+
+  <div class="field">
+    <%= form.label :armour %>
+    <%= form.number_field :armour %>
+  </div>
+
+  <div class="field">
+    <%= form.label :shield %>
+    <%= form.number_field :shield %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

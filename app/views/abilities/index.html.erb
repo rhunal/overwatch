@@ -6,7 +6,7 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Description</th>
+      <th width="40%">Description</th>
       <th>Is ultimate</th>
       <th>Hero</th>
       <th colspan="3"></th>
@@ -19,7 +19,7 @@
         <td><%= ability.name %></td>
         <td><%= ability.description %></td>
         <td><%= ability.is_ultimate %></td>
-        <td><%= ability.hero %></td>
+        <td><%= ability.hero.name %></td>
         <td><%= link_to 'Show', ability %></td>
         <td><%= link_to 'Edit', edit_ability_path(ability) %></td>
         <td><%= link_to 'Destroy', ability, method: :delete, data: { confirm: 'Are you sure?' } %></td>

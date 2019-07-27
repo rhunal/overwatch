@@ -1,0 +1,21 @@
+<li class="nav-item dropdown">
+  <% is_heros_controller = controller_name == 'heros' %>
+  <a class="nav-link dropdown-toggle <%= 'active' if is_heros_controller %>" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Hero</a>
+
+  <div class="dropdown-menu">
+    <%= link_to 'All Heros', main_app.heros_path, class: "dropdown-item #{ 'active' if is_heros_controller && action_name == 'index' }"%>
+
+    <%= link_to 'New Hero', main_app.new_hero_path, class: "dropdown-item #{ 'active' if is_heros_controller && action_name == 'new' }"%>
+  </div>
+</li>
+
+<li class="nav-item dropdown">
+  <% is_abilities_controller = controller_name == 'abilities' %>
+  <a class="nav-link dropdown-toggle <%= 'active' if is_abilities_controller %>" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Ability</a>
+
+  <div class="dropdown-menu">
+    <%= link_to 'All Abilities', main_app.abilities_path, class: "dropdown-item #{ 'active' if is_abilities_controller && action_name == 'index' }"%>
+
+    <%= link_to 'New Ability', main_app.new_ability_path, class: "dropdown-item #{ 'active' if is_abilities_controller && action_name == 'new' }"%>
+  </div>
+</li>

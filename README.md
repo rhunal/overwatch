@@ -1,24 +1,49 @@
-# README
+================
+Overwatch
+================
+This application requires:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- Ruby 2.4.1
+- Rails 5.2.3
 
-Things you may want to cover:
+================
+API Docs
+================
+Overwatch API has a very simple RESTful API to get information.
+As the API is read-only, the only method required is GET.
 
-* Ruby version
+API is having the following endpoints:
 
-* System dependencies
+- /api/heros - hero list
+- /api/heros/{hero_id} - hero data
+- /api/heros/{hero_id}/abilities - hero ability list
+- /api/abilities/ - ability list
+- /api/abilities/{ability_id} - ability data
 
-* Configuration
+================
+Run using Docker
+================
 
-* Database creation
+docker build -t overwatch_app .
+docker run -itP overwatch_app
 
-* Database initialization
 
-* How to run the test suite
+================
+Running an instance
+================
 
-* Services (job queues, cache servers, search engines, etc.)
+Installation steps:
 
-* Deployment instructions
+1. Clone the repository.
 
-* ...
+git clone https://github.com/rhunal/overwatch.git
+
+2. configure database with postgres credentials
+
+3. install required gems
+
+bundle install
+
+4. start local server
+
+rails s
